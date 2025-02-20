@@ -1,0 +1,27 @@
+Git Commands
+
+git -v 					// To check git version
+
+git config --global user.email "mail_id" // Set global Git email address. This email is associated with your commits across all repositories on your system.
+
+git config --global user.name "username"  // To set git username globally
+
+git init 			 	// To initialize git repository in your local system
+
+git status				// To check git repostory folder status, It will display the updated files
+
+git add . 				// To move all these changes into the staging area before committing them
+
+git add <file name>			// To add a single file to staging area
+
+git commit -m " message"		// creating commit message
+
+git remote set-url origin <git hub repository url> // To set remote repository url
+
+git remote -v 				//To display remote repositories linked to your local Git repository,
+
+git branch --show-current 		// To display current branch
+
+git remote remove origin 		//Remove a remote repository
+
+git push origin main 			// Push all changes in to main branch
