@@ -25,3 +25,5 @@ git branch --show-current 		// To display current branch
 git remote remove origin 		//Remove a remote repository
 
 git push origin main 			// Push all changes in to main branch
+
+git pull origin main			// Pull the latest changes from main branch
