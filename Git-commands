@@ -28,4 +28,6 @@ git push origin main 			// Push all changes in to main branch
 
 git pull origin main			// Pull the latest changes from main branch
 
-git log					// to check git log
+git log					// To check git log
+
+git revert <Commit_Id>			// To revert the changes
