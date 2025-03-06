@@ -16,6 +16,10 @@ git add <file name>			// To add a single file to staging area
 
 git commit -m " message"		// creating commit message
 
+git fetch origin           // command to fetch repository to local end
+
+git checkout <branch name> // To switch in to specific branch locally
+
 git remote add origin <git hub repository url> // To add remote repository url
 
 git remote set-url origin <git hub repository url> // To set remote repository url
