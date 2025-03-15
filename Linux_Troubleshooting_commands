@@ -1,0 +1,51 @@
+Linux Troubleshooting commands
+==============================
+
+top -cd2			// to check server performance CPU, Disk IO, memory etc.
+
+ps -aux | grep -i <pid>		//for checking the process details
+
+htop				// check memory consuming details
+
+free -mh			// memory details
+
+sync; echo 1 > /proc/sys/vm/drop_caches		// clear server cache memory
+
+df -h		//disk usage
+
+du -sch /* | sort -n -r | grep -i g	// list high disk usage folders and files
+
+netstat -nltp			// to list services with their port and pid
+
+telnet <ipaddress> <port>	// check connectivity with the server
+
+service --status-all		//list running services
+ 
+systemctl list-units --type=service --all	// list all services with their status details 
+
+service apache2 status Or systemctl status apache2 	//check apache webservice status
+
+apachectl configtest  Or apachectl -t			// for apache conf syntax check
+
+apachectl -S			//list enabled website configuration and details
+
+nginx -t		//nginx conf check
+
+nginx -T		// print nginx enabled websites configuration details
+
+grep -irl <keykword> path		// will list all files containing the keyword
+
+
+grep '02/Mar/2025:18:' access.log | awk '{print $1}' | sort | uniq -c | sort -nr | head			// command to check high connection request IP addresses received on 02/Mar/2025 at 6 PM
+
+
+
+
+
+
+
+
+
+
+
+
