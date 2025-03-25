@@ -38,7 +38,7 @@ grep -irl <keykword> path		// will list all files containing the keyword
 
 grep '02/Mar/2025:18:' access.log | awk '{print $1}' | sort | uniq -c | sort -nr | head			// command to check high connection request IP addresses received on 02/Mar/2025 at 6 PM
 
-
+sudo sync; echo 3 > /proc/sys/vm/drop_caches           //for clearing cache from server
 
 
 
