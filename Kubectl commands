@@ -1,0 +1,82 @@
+
+	Kubectl commands
+	
+kubectl get all		// to get cluster info	
+
+kubectl get nodes	// command to list of nodes that created under the cluster
+
+Kubectl get ns		// list namespaces
+
+kubectl get po		// list pods in default namespace
+
+kubectl get po -A	// list all pods with all namespaces
+
+
+
+kubectl get po | grep -i (pod name)
+
+kubect get po -A | grep -i (pod name) ==== For get pod with namespace only for latest environment
+
+kubectl describe deployment dz-admin-backend -n dz-development-edge-latest | grep -i image
+
+Kubectl edit deployment <deployment name>
+
+kubectl describe deployment <deployment name> | grep -i <pod/connector name>
+
+
+kubectl rollout restart deployment <deployment name>  	====for restart the following services in development environment:
+
+
+=========================================================================
+
+	To check logs and errors
+
+kubectl logs -l app=podname > podname.txt     
+
+kubectl logs -l app=deploymentname > deploymentname-$(date +"%Y-%m-%d-%I-%M-%p").txt
+
+For checking pod level errors
+
+=============================== 
+
+tailpod deploymentname 10 error > deploymentname--$(date +"%Y-%m-%d-%I-%M-%p").txt For checking deployment level errors
+
+
+kubectl logs -l app=dz-event-normalizer > dz-event-normalizer-$(date +"%Y-%m-%d-%I-%M-%p").txt
+
+tailpod deployment-name 50 >>>to check tail pod.
+kubectl get pod -o wide
+kubectl logs -l app=deployment-name > dz-connector-elasticsearch-$(date +"%Y-%m-%d-%I-%M-%p").txt
+tail-pod-logs.sh deploymentname 10 error
+tailpod deploymentname  100 | grep -i error
+
+==================================================================
+
+kubectl rollout restart deployment deployment name
+
+"kubectl config get-contexts"                      # display list of contexts
+"kubectl config current-context"                       # display the current-context
+"kubectl config use-context <CONTXT_NAME>"             # set the default context
+
+or
+
+"kubectx -" #Switch between contexts back and forth
+
+kubectl logs POD_NAME --previous 	//to get logs of pod after restart
+
+
+Kind (kubernetes in Docker) commands
+==========
+kind get clusters	// will display kind 
+
+kind export kubeconfig --name my-cluster 	//Set kubectl context to "kind-my-cluster"
+
+kubectl config get-contexts
+
+kubectl cluster-info --context kind-my-cluster		//information about KIND Cluster
+
+kubectl get nodes --context kind-my-cluster
+
+
+
+
