@@ -1,0 +1,51 @@
+MySQL commands
+==============
+
+mysql --version		// to check mysql version
+
+mysql -h <endpoint> -u <usernme> -p 
+
+for directly enter into mysql with root password create 
+
+
+MySQL backup command to taken from remote RDS
+
+mysqldump  -h <endpoint> --routines --events --triggers  -u admin -p  db_name  > db_name.sql		
+ 
+
+You can use below commands for taking backup of single table from MySQL host
+
+mysqldump db_name table --single-transaction --routines --events --triggers > table_name.sql
+
+
+Restoration command
+
+mysql db_name < table_name.sql
+
+ 
+
+
+To check Table size
+
+use db_name;		//To use the database
+
+show tables from db_name; 	//list the tables under the database
+
+
+SELECT COUNT(*) FROM Table_name;
+
+---------------------------------------------
+SELECT table_name, CONCAT(ROUND(((data_length + index_length) / 1024 / 1024), 2), ' MB') AS table_size
+FROM information_schema.tables
+WHERE table_schema = 'your_database_name'
+AND table_name = 'your_table_name';
+
+
+
+SELECT table_schema "Database", SUM(data_length + index_length) / (1024 * 1024) "Size (MB)"
+FROM information_schema.tables
+GROUP BY table_schema;
+
+------------------------------------
+
+
