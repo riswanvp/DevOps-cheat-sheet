@@ -3,9 +3,21 @@ MySQL commands
 
 mysql --version		// to check mysql version
 
+systemctl status mysql		//service status command check
+
 mysql -h <endpoint> -u <usernme> -p 
 
-for directly enter into mysql with root password create 
+
+For directly enter into mysql with root password create .my.cnf file under /root directory
+
+vi .my.cnf
+=====
+[client]
+password="password"
+user=root
+=====
+
+Type 'mysql' and press "Enter" button it will provide direct login to mysql
 
 
 MySQL backup command to taken from remote RDS
@@ -48,4 +60,10 @@ GROUP BY table_schema;
 
 ------------------------------------
 
+GRANT SELECT, INSERT, UPDATE ON database_name.table_name TO 'user_name'@'%'; 		// Grant a user to read write access to a single table
 
+GRANT SELECT, INSERT, UPDATE, DELETE ON database_name.* TO 'user_name'@'%';		// Grant a user to read write and delete access to all tables
+
+FLUSH PRIVILEGES;
+
+SHOW GRANTS FOR 'user'@'%';		// to show premissions of the user
