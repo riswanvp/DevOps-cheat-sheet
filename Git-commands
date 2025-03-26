@@ -37,3 +37,5 @@ git pull origin main			// Pull the latest changes from main branch
 git log					// To check git log
 
 git revert <Commit_Id>			// To revert the changes
+
+git pull --no-rebase origin main	// to merge the remote changes into your local branch

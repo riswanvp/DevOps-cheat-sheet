@@ -17,7 +17,10 @@ password="password"
 user=root
 =====
 
-Type 'mysql' and press "Enter" button it will provide direct login to mysql
+Type 'mysql' and press "Enter" button it will provide direct login to mysql.
+
+
+mysqladmin proc stat;			//list the quries running on mysql
 
 
 MySQL backup command to taken from remote RDS
@@ -60,10 +63,17 @@ GROUP BY table_schema;
 
 ------------------------------------
 
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';		// command to create mysql user
+
+GRANT ALL PRIVILEGES ON *.* TO 'newuser'@'localhost';			// command to set permission
+
+replace 'localhost' with '%' for getting remote access
+
+
 GRANT SELECT, INSERT, UPDATE ON database_name.table_name TO 'user_name'@'%'; 		// Grant a user to read write access to a single table
 
 GRANT SELECT, INSERT, UPDATE, DELETE ON database_name.* TO 'user_name'@'%';		// Grant a user to read write and delete access to all tables
 
-FLUSH PRIVILEGES;
+FLUSH PRIVILEGES;			// to reload the privilege tables from the database into memory
 
 SHOW GRANTS FOR 'user'@'%';		// to show premissions of the user
