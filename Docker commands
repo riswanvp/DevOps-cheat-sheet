@@ -1,0 +1,113 @@
+Docker commands
+===============
+1. To check installed docker version
+
+docker --version
+
+2. To list reunning docker containers
+
+docker ps	
+
+3. To list running and stopped containers
+
+docker ps -a 
+
+4. List all docker images available on your system
+
+docker images
+
+5. To remove docker images
+
+docker rmi <image id>
+
+6. Create a docker container with specified image
+
+docker run <imagename>:<tag>
+
+7. Start a container 
+
+docker start <container id>
+
+8. Stop a container
+
+docker stop <container id>
+
+9. Restart a docker container
+
+docker restart <container id>
+
+10. Remove a docker container
+
+docker rm <container id>
+
+12. create a container in detached mode
+
+docker run -d <imagename>:<tag>
+
+13. To get into the container
+
+docker exec -it <container id> /bin/bash
+
+14. To check logs of the container
+
+docker log <container id> 
+
+docker log -f --tail 10 <container id> 
+
+15. To check detailed information about the docker container
+
+docker inspect <container id>
+
+16. To create docker image from Dockerfile
+
+docker build -t <image>:<tag> <path of dockerfile>
+
+17. Command to pull specific image from docker registry (docker hub) 
+
+docker pull <image>:<tag>
+
+18. Push image from local to docker hub
+
+docker push <image>:<tag>
+
+19. List all docker volumes
+
+docker volume ls
+
+20. To create docker volume
+
+docker volume create <volume_name>
+
+21. Delete docker volume
+
+docker volume rm <volume_name>
+
+22. List all Docker networks 
+
+docker network ls
+
+23. To create a docker network
+
+docker network create <network_name>
+
+24. Monitor resource usage of docker containers
+
+docker stats
+
+25. Remove unused data of docker 
+
+docker system prune
+
+26. To creates a new image from docker container's change
+
+docker commit <container_id> <new_image_name>:<tag>
+
+27. Rename an existing container
+
+docker rename <old_name> <new_name>
+
+28. Copy file from container to host machine
+
+docker cp <container_id>:/path/to/file <host path>
+
+
