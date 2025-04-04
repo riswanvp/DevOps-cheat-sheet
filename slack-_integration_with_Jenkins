@@ -1,12 +1,44 @@
-Login to Jenkins and Install slack notification plugins
-
-Go to Slack
-
-Select slack channel >> Select the slack settings icon >> click on "Add an app or integration" >> search for "Jenkins CI' >> Add configuration >> Select specific channel that we want give access jenkins >> click on " Add Jenkins CI" >> It will provide the instruction to add this to Jenkins
-
-In Step3 should be provide steps update the details of Team Domain and Integration token. 
+Step1: Login to Jenkins and Install slack notification plugins
 
 
-Go to Jenkins >> Manage Jenkins >> Global slack notifier settings Or Credentials >> Edit or Add credential >> update Team Domain and replace the Integration token in section "secret".
+Step2: Go to Slack
 
 
+Open the desired Slack channel.
+
+Click on the channel settings icon (gear icon).
+
+Select "Add an app or integration".
+
+In the search bar, type "Jenkins CI".
+
+Click "Add Configuration" for Jenkins CI.
+
+Choose the specific Slack channel where you want Jenkins to post updates.
+
+Click "Add Jenkins CI".
+
+Follow the instructions provided to integrate Jenkins with your Slack workspace.
+
+
+Update for Step 3: After selecting "Add an app or integration" and choosing "Jenkins CI", you will be provided with the Team Domain and Integration Token.
+
+To configure this in Jenkins:
+
+Go to Jenkins.
+
+Navigate to Manage Jenkins > Configure System (or Global Slack Notifier Settings).
+
+Locate the Slack configuration section.
+
+Enter your Team Domain.
+
+Under Credentials, either edit an existing credential or add a new one.
+
+In the Secret field, paste the Integration Token provided by Slack.
+
+Save the changes.
+
+
+
+If notifications are sent via a Jenkinsfile, make sure to update the necessary Slack configuration details directly within the Jenkinsfile.
