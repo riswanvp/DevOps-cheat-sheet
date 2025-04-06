@@ -6,9 +6,7 @@ Step2: Go to Slack
 
 Open the desired Slack channel.
 
-Click on the channel settings icon (gear icon).
-
-Select "Add an app or integration".
+Click on the workspace dropdown.
 
 In the search bar, type "Jenkins CI".
 
