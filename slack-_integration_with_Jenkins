@@ -8,9 +8,11 @@ Open the desired Slack channel.
 
 Click on the workspace dropdown.
 
+Tools & settings >> Manage Apps
+
 In the search bar, type "Jenkins CI".
 
-Click "Add Configuration" for Jenkins CI.
+Click "Add to Slack" for Jenkins CI.
 
 Choose the specific Slack channel where you want Jenkins to post updates.
 
