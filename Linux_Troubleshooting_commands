@@ -44,6 +44,8 @@ Identify the IP addresses with the most hits
 cd /var/log/apache2/
 
 grep "$(date -d '1 hour ago' +'%d/%b/%Y:%H')" access.log | awk '{print $1, $9}' | sort | uniq -c | sort –nr >> change the time according to your need
+cat  access.log | awk '$4 >= "[07/Apr/2025:14:00:04" && $4 <= "[07/Apr/2025:15:00:04" {print}' > access.log-7-Apr2025
+
 
 sudo sync; echo 3 > /proc/sys/vm/drop_caches           //for clearing cache from server
 
