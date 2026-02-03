@@ -113,3 +113,7 @@ docker cp <container_id>:/path/to/file <host path>
 29. To find docker volume 
 
 docker inspect <container id> --format '{{ range .Mounts }}{{ .Name }} -> {{ .Destination }}{{ "\n" }}{{ end }}'
+
+30. Enable container restart policy for existing docker container
+
+docker update --restart=always <container id>
